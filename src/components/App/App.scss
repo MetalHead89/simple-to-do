@@ -1,5 +1,5 @@
 .app {
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 5vw;
   display: flex;
   flex-direction: column;
@@ -15,12 +15,12 @@
     cursor: default;
     user-select: none;
 
-    @media screen and (max-width: 700px) {
-      font-size: 8vw;
+    @media screen and (max-width: 1200px) {
+      font-size: 60px;
     }
 
-    @media screen and (max-width: 400px) {
-      font-size: 11vw;
+    @media screen and (max-width: 300px) {
+      font-size: 20vw;
     }
   }
 }
