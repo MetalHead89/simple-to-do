@@ -1,6 +1,13 @@
 @font-face {
   font-family: 'Hubballi';
-  src: local('Hubballi'), url('/fonts/Hubballi/Hubballi.woff') format('woff');
+  src: local('Hubballi'), url('/fonts/hubballi/hubballi.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: local('Roboto'), url('/fonts/roboto/roboto.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
