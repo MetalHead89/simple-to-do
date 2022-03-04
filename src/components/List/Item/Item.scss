@@ -1,3 +1,5 @@
+@import '/src/styles/mixins.scss';
+
 $item: '.item';
 
 #{$item} {
@@ -35,13 +37,12 @@ $item: '.item';
     user-select: none;
 
     &::before {
-      content: '';
+      @include material-icon;
+
+      content: 'radio_button_unchecked';
       position: absolute;
       left: 0;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      border: 1px solid #d4b3d4;
+      color: #d4b3d4;
     }
   }
 
@@ -50,7 +51,8 @@ $item: '.item';
     color: #d4b3d4;
 
     #{$item}__text::before {
-      border: 1px solid rgb(138, 32, 165);
+      content: 'task_alt';
+      color: rgb(138, 32, 165);
     }
   }
 }
