@@ -41,6 +41,15 @@ $item: '.item';
       width: 20px;
       height: 20px;
       border-radius: 50%;
+      border: 1px solid #d4b3d4;
+    }
+  }
+
+  &_completed {
+    text-decoration: line-through;
+    color: #d4b3d4;
+
+    #{$item}__text::before {
       border: 1px solid rgb(138, 32, 165);
     }
   }

@@ -2,7 +2,15 @@ import { useAppDispatch } from '../../../store/hooks';
 import { ListSlice } from '../../../store/reducers/ListSlice';
 import './Item.scss';
 
-function Item({ id, text }: { id: number; text: string }) {
+function Item({
+  id,
+  text,
+  isComplete,
+}: {
+  id: number;
+  text: string;
+  isComplete: boolean;
+}) {
   const { changeItemState } = ListSlice.actions;
   const dispatch = useAppDispatch();
 
@@ -10,8 +18,10 @@ function Item({ id, text }: { id: number; text: string }) {
     dispatch(changeItemState(id));
   };
 
+  const itemClasses = isComplete ? 'item item_completed' : 'item';
+
   return (
-    <li className="item" key={id}>
+    <li className={itemClasses} key={id}>
       <span className="item__text" onClick={() => handleItemClick(id)}>
         {text}
       </span>
