@@ -7,14 +7,22 @@ function List() {
   const { addItem } = ListSlice.actions;
   const dispatch = useAppDispatch();
 
-  const items = list.map((item) => <li key={item.id}>{item.text}</li>);
+  const items = list.map((item) => (
+    <li className="list__item" key={item.id}>
+      {item.text}
+    </li>
+  ));
+  const itemsContainer =
+    items.length > 0 ? (
+      <ul className="list__items-container">{items}</ul>
+    ) : null;
 
   const handleListKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const target = event.target;
 
     if (event.key === 'Enter' && target instanceof HTMLInputElement) {
       dispatch(addItem(target.value));
-      
+
       target.value = '';
     }
   };
@@ -27,7 +35,7 @@ function List() {
         placeholder="Что нужно сделать?"
         onKeyDown={(event) => handleListKeyDown(event)}
       />
-      <ul>{items}</ul>
+      {itemsContainer}
     </div>
   );
 }

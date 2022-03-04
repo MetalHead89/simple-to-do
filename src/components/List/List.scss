@@ -40,7 +40,43 @@
 
     &:focus {
       outline: none;
-      border: 2px solid rgb(138, 32, 165);;
+      border: 2px solid rgb(138, 32, 165);
+    }
+  }
+
+  &__items-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0;
+    box-sizing: border-box;
+    border: 2px solid rgb(214, 212, 212);
+    border-top: none;
+    width: 100%;
+    padding: 5px 1vw;
+    color: rgb(138, 32, 165);
+    font-family: Roboto, sans-serif;
+    background: white;
+  }
+
+  &__item {
+    position: relative;
+    display: inline-block;
+    list-style-type: none;
+    padding: 5px;
+    padding-left: 20px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid rgb(138, 32, 165);
     }
   }
 }
