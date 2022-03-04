@@ -10,23 +10,27 @@ $list: '.list';
     font-size: 18px;
   }
 
+  @media screen and (max-width: 300px) {
+    font-size: 6vw;
+  }
+
   &__input {
     box-sizing: border-box;
     border: 2px solid rgb(214, 212, 212);
     width: 100%;
-    height: 3vw;
+    height: 4vw;
     padding: 0 1vw;
     color: rgb(138, 32, 165);
     font-family: Roboto, sans-serif;
 
     @media screen and (max-width: 1200px) {
-      height: 35px;
+      height: 49px;
       padding: 12px;
     }
 
     @media screen and (max-width: 300px) {
-      height: 11.7vw;
-      font-size: 6vw;
+      height: 16.3vw;
+      // font-size: 6vw;
       padding: 0 4vw;
     }
 
@@ -52,10 +56,14 @@ $list: '.list';
     border: 2px solid rgb(214, 212, 212);
     border-top: none;
     width: 100%;
-    padding: 5px 1vw;
+    padding: 1vw 1vw;
     color: rgb(138, 32, 165);
     font-family: Roboto, sans-serif;
     background: white;
+
+    @media screen and (max-width: 1200px) {
+      padding: 12px;
+    }
   }
 
   &__deleteItemButton {
@@ -78,25 +86,13 @@ $list: '.list';
       }
     }
 
-    // height: 3vw;
-    // vertical-align: middle;
-    // position: relative;
-    // display: inline-block;
-    // list-style-type: none;
-    // padding-left: 30px;
-    // cursor: pointer;
+    @media screen and (max-width: 1200px) {
+      height: 36px;
+    }
 
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   left: 0;
-    //   top: 50%;
-    //   transform: translateY(-50%);
-    //   width: 20px;
-    //   height: 20px;
-    //   border-radius: 50%;
-    //   border: 1px solid rgb(138, 32, 165);
-    // }
+    @media screen and (max-width: 300px) {
+      height: 12vw;
+    }
   }
 
   &__text {
@@ -109,8 +105,6 @@ $list: '.list';
       content: '';
       position: absolute;
       left: 0;
-      // top: 50%;
-      // transform: translateY(-50%);
       width: 20px;
       height: 20px;
       border-radius: 50%;
