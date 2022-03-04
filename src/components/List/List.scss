@@ -1,6 +1,4 @@
-$list: '.list';
-
-#{$list} {
+.list {
   width: 28vw;
   font-size: 1.5vw;
 
@@ -30,7 +28,6 @@ $list: '.list';
 
     @media screen and (max-width: 300px) {
       height: 16.3vw;
-      // font-size: 6vw;
       padding: 0 4vw;
     }
 
@@ -63,52 +60,6 @@ $list: '.list';
 
     @media screen and (max-width: 1200px) {
       padding: 12px;
-    }
-  }
-
-  &__deleteItemButton {
-    width: 10px;
-    height: 10px;
-    display: none;
-    cursor: pointer;
-  }
-
-  &__item {
-    height: 3vw;
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    &:hover {
-      #{$list}__deleteItemButton {
-        display: inline-block;
-      }
-    }
-
-    @media screen and (max-width: 1200px) {
-      height: 36px;
-    }
-
-    @media screen and (max-width: 300px) {
-      height: 12vw;
-    }
-  }
-
-  &__text {
-    position: relative;
-    padding-left: 30px;
-    cursor: pointer;
-    user-select: none;
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      border: 1px solid rgb(138, 32, 165);
     }
   }
 }
