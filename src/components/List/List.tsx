@@ -9,7 +9,8 @@ function List() {
 
   const items = list.map((item) => (
     <li className="list__item" key={item.id}>
-      {item.text}
+      <span className="list__text">{item.text}</span>
+      <button className="list__deleteItemButton"></button>
     </li>
   ));
   const itemsContainer =

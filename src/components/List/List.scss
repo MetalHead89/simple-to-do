@@ -1,4 +1,6 @@
-.list {
+$list: '.list';
+
+#{$list} {
   width: 28vw;
   font-size: 1.5vw;
 
@@ -45,9 +47,6 @@
   }
 
   &__items-container {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
     margin: 0;
     box-sizing: border-box;
     border: 2px solid rgb(214, 212, 212);
@@ -59,24 +58,63 @@
     background: white;
   }
 
-  &__item {
-    position: relative;
-    display: inline-block;
-    list-style-type: none;
-    padding: 5px;
-    padding-left: 20px;
+  &__deleteItemButton {
+    width: 10px;
+    height: 10px;
+    display: none;
     cursor: pointer;
+  }
+
+  &__item {
+    height: 3vw;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      #{$list}__deleteItemButton {
+        display: inline-block;
+      }
+    }
+
+    // height: 3vw;
+    // vertical-align: middle;
+    // position: relative;
+    // display: inline-block;
+    // list-style-type: none;
+    // padding-left: 30px;
+    // cursor: pointer;
+
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   left: 0;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    //   width: 20px;
+    //   height: 20px;
+    //   border-radius: 50%;
+    //   border: 1px solid rgb(138, 32, 165);
+    // }
+  }
+
+  &__text {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
 
     &::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 10px;
-      height: 10px;
+      // top: 50%;
+      // transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
-      border: 2px solid rgb(138, 32, 165);
+      border: 1px solid rgb(138, 32, 165);
     }
   }
 }
