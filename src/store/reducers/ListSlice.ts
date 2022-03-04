@@ -25,6 +25,13 @@ export const ListSlice = createSlice({
 
       state.list.push({ id, text: action.payload, isComplete: false });
     },
+    changeItemState(state, action: PayloadAction<number>) {
+      state.list.forEach((item, index) => {
+        if (item.id === action.payload) {
+          state.list[index].isComplete = !state.list[index].isComplete;
+        }
+      });
+    },
   },
 });
 

@@ -1,18 +1,22 @@
+import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { ListSlice } from '../../store/reducers/ListSlice';
 import './List.scss';
 
 function List() {
   const { list } = useAppSelector((state) => state.listReducer);
-  const { addItem } = ListSlice.actions;
+  const { addItem, changeItemState } = ListSlice.actions;
   const dispatch = useAppDispatch();
 
   const items = list.map((item) => (
     <li className="list__item" key={item.id}>
-      <span className="list__text">{item.text}</span>
+      <span className="list__text" onClick={() => handleItemClick(item.id)}>
+        {item.text}
+      </span>
       <button className="list__deleteItemButton"></button>
     </li>
   ));
+
   const itemsContainer =
     items.length > 0 ? (
       <ul className="list__items-container">{items}</ul>
@@ -26,6 +30,10 @@ function List() {
 
       target.value = '';
     }
+  };
+
+  const handleItemClick = (id: number) => {
+    dispatch(changeItemState(id));
   };
 
   return (
