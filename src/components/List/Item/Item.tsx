@@ -25,7 +25,7 @@ function Item({
   const itemClasses = isComplete ? 'item item_completed' : 'item';
 
   return (
-    <li className={itemClasses} key={id}>
+    <li className={itemClasses}>
       <span className="item__text" onClick={() => handleItemClick(id)}>
         {text}
       </span>

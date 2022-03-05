@@ -9,7 +9,7 @@ function List() {
   const { addItem } = ListSlice.actions;
   const dispatch = useAppDispatch();
 
-  const items = list.map((item) => <Item {...item} />);
+  const items = list.map((item) => <Item key={item.id} {...item} />);
 
   const itemsContainer =
     items.length > 0 ? (
