@@ -32,16 +32,26 @@ $item: '.item';
 
   &__text {
     position: relative;
-    padding-left: 30px;
+    padding-left: 2vw;
     cursor: pointer;
     user-select: none;
+
+    @media screen and (max-width: 1200px) {
+      padding-left: 24px;
+    }
+  
+    @media screen and (max-width: 300px) {
+      padding-left: 8vw;
+    }
 
     &::before {
       @include material-icon;
 
       content: 'radio_button_unchecked';
       position: absolute;
+      top: 50%;
       left: 0;
+      transform: translateY(-50%);
       color: #d4b3d4;
     }
   }
