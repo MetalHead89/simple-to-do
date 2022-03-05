@@ -11,11 +11,15 @@ function Item({
   text: string;
   isComplete: boolean;
 }) {
-  const { changeItemState } = ListSlice.actions;
+  const { changeItemState, deleteItem } = ListSlice.actions;
   const dispatch = useAppDispatch();
 
   const handleItemClick = (id: number) => {
     dispatch(changeItemState(id));
+  };
+
+  const handleDeleteButtonClick = (id: number) => {
+    dispatch(deleteItem(id));
   };
 
   const itemClasses = isComplete ? 'item item_completed' : 'item';
@@ -25,7 +29,12 @@ function Item({
       <span className="item__text" onClick={() => handleItemClick(id)}>
         {text}
       </span>
-      <button className="item__deleteButton">close</button>
+      <button
+        className="item__deleteButton"
+        onClick={() => handleDeleteButtonClick(id)}
+      >
+        close
+      </button>
     </li>
   );
 }

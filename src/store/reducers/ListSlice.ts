@@ -32,6 +32,13 @@ export const ListSlice = createSlice({
         }
       });
     },
+    deleteItem(state, action: PayloadAction<number>) {
+      state.list.forEach((item, index) => {
+        if(item.id === action.payload) {
+          state.list.splice(index, 1);
+        }
+      })
+    }
   },
 });
 
