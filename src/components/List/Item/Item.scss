@@ -1,4 +1,5 @@
 @import '/src/styles/mixins.scss';
+@import '/src/styles/vars.scss';
 
 $item: '.item';
 
@@ -10,6 +11,7 @@ $item: '.item';
   align-items: center;
 
   &:hover {
+    color: $accent;
     #{$item}__deleteButton {
       display: inline-block;
     }
@@ -52,17 +54,17 @@ $item: '.item';
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-      color: #d4b3d4;
+      color: $inactive;
     }
   }
 
   &_completed {
     text-decoration: line-through;
-    color: #d4b3d4;
+    color: $inactive;
 
     #{$item}__text::before {
       content: 'task_alt';
-      color: rgb(138, 32, 165);
+      color: $main;
     }
   }
 }

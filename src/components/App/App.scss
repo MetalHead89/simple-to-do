@@ -1,3 +1,5 @@
+@import '/src/styles/vars.scss';
+
 .app {
   min-height: 100vh;
   padding: 0 5vw;
@@ -7,7 +9,7 @@
   background: url('/images/background.png');
 
   &__title {
-    color: rgb(138, 32, 165);
+    color: $main;
     font-family: Hubballi, sans-serif;
     text-align: center;
     text-transform: uppercase;
