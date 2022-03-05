@@ -25,7 +25,7 @@ function Item({
       <span className="item__text" onClick={() => handleItemClick(id)}>
         {text}
       </span>
-      <button className="item__deleteButton"></button>
+      <button className="item__deleteButton">close</button>
     </li>
   );
 }

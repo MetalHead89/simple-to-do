@@ -11,7 +11,6 @@ $item: '.item';
   align-items: center;
 
   &:hover {
-    color: $accent;
     #{$item}__deleteButton {
       display: inline-block;
     }
@@ -25,11 +24,32 @@ $item: '.item';
     height: 12vw;
   }
 
+  &_completed {
+    #{$item}__text {
+      text-decoration: line-through;
+      color: $inactive;
+
+      &::before {
+        content: 'task_alt';
+        color: $main;
+      }
+    }
+  }
+
   &__deleteButton {
-    width: 10px;
-    height: 10px;
+    @include material-icon;
+
     display: none;
+    border: none;
+    padding: none;
+    background: none;
+    color: $main;
+    line-height: 0;
     cursor: pointer;
+
+    &:hover {
+      color: $accent;
+    }
   }
 
   &__text {
@@ -38,10 +58,14 @@ $item: '.item';
     cursor: pointer;
     user-select: none;
 
+    &:hover {
+      color: $accent;
+    }
+
     @media screen and (max-width: 1200px) {
       padding-left: 24px;
     }
-  
+
     @media screen and (max-width: 300px) {
       padding-left: 8vw;
     }
@@ -55,16 +79,6 @@ $item: '.item';
       left: 0;
       transform: translateY(-50%);
       color: $inactive;
-    }
-  }
-
-  &_completed {
-    text-decoration: line-through;
-    color: $inactive;
-
-    #{$item}__text::before {
-      content: 'task_alt';
-      color: $main;
     }
   }
 }
