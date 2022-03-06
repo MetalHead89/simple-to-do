@@ -10,14 +10,19 @@ function List() {
   const { addItem } = ListSlice.actions;
   const dispatch = useAppDispatch();
 
-  const items = list.map((item) => <Item key={item.id} {...item} />);
+  let backlogsCount = 0;
+  const items = list.map((item) => {
+    backlogsCount += item.isComplete ? 0 : 1;
+
+    return <Item key={item.id} {...item} />;
+  });
 
   const itemsContainer =
     items.length > 0 ? (
       <>
         <ul className="list__items-container">
           {items}
-          <BottomPanel />
+          <BottomPanel backlogsCount={backlogsCount} />
         </ul>
       </>
     ) : null;

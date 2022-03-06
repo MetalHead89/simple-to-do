@@ -1,4 +1,19 @@
+@import '/src/styles/vars.scss';
+
 .bottomPanel {
   display: flex;
   justify-content: space-between;
+
+  &__itemsCounter {
+    color: $inactive;
+    font-size: .9vw;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 11px;
+    }
+  
+    @media screen and (max-width: 300px) {
+      font-size: 3.7vw;
+    }
+  }
 }
