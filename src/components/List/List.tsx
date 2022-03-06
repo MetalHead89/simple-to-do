@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { ListSlice } from '../../store/reducers/ListSlice';
+import BottomPanel from './BottomPanel/BottomPanel';
 import Item from './Item/Item';
 import './List.scss';
 
@@ -13,7 +14,12 @@ function List() {
 
   const itemsContainer =
     items.length > 0 ? (
-      <ul className="list__items-container">{items}</ul>
+      <>
+        <ul className="list__items-container">
+          {items}
+          <BottomPanel />
+        </ul>
+      </>
     ) : null;
 
   const handleListKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
