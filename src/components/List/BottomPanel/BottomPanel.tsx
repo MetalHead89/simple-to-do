@@ -1,8 +1,17 @@
 import './BottomPanel.scss';
 import GetDeclension from '../../../utils/GetDeclension';
 
-function BottomPanel({ backlogsCount }: { backlogsCount: number }) {
+function BottomPanel({
+  backlogsCount,
+  isClearButton,
+}: {
+  backlogsCount: number;
+  isClearButton: boolean;
+}) {
   const DECLENSION_CASES: [string, string, string] = ['дело', 'дела', 'дел'];
+  const clearButton = isClearButton ? (
+    <button className="bottomPanel__clearButton">Удалить выполненное</button>
+  ) : null;
 
   return (
     <div className="bottomPanel">
@@ -12,8 +21,7 @@ function BottomPanel({ backlogsCount }: { backlogsCount: number }) {
           DECLENSION_CASES
         )}`}
       </span>
-      <div className="bottomPanel__filter">2</div>
-      <button className="bottomPanel__clearButton"></button>
+      {clearButton}
     </div>
   );
 }

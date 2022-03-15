@@ -46,6 +46,7 @@ $item: '.item';
     color: $main;
     line-height: 0;
     cursor: pointer;
+    user-select: none;
 
     &:hover {
       color: $accent;

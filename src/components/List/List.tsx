@@ -17,12 +17,17 @@ function List() {
     return <Item key={item.id} {...item} />;
   });
 
+  const areCompletedWorks = backlogsCount !== list.length;
+
   const itemsContainer =
     items.length > 0 ? (
       <>
         <ul className="list__items-container">
           {items}
-          <BottomPanel backlogsCount={backlogsCount} />
+          <BottomPanel
+            backlogsCount={backlogsCount}
+            isClearButton={areCompletedWorks}
+          />
         </ul>
       </>
     ) : null;
