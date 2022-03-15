@@ -31,7 +31,7 @@ $item: '.item';
 
       &::before {
         content: 'task_alt';
-        color: $main;
+        color: $inactive;
       }
     }
   }
@@ -79,7 +79,7 @@ $item: '.item';
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-      color: $inactive;
+      color: $main;
     }
   }
 }
