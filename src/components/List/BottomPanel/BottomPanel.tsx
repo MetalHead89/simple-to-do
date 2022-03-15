@@ -1,5 +1,7 @@
 import './BottomPanel.scss';
 import GetDeclension from '../../../utils/GetDeclension';
+import { ListSlice } from '../../../store/reducers/ListSlice';
+import { useAppDispatch } from '../../../store/hooks';
 
 function BottomPanel({
   backlogsCount,
@@ -8,10 +10,10 @@ function BottomPanel({
   backlogsCount: number;
   isClearButton: boolean;
 }) {
+  const { clearCompletedItems } = ListSlice.actions;
+  const dispatch = useAppDispatch();
+
   const DECLENSION_CASES: [string, string, string] = ['дело', 'дела', 'дел'];
-  const clearButton = isClearButton ? (
-    <button className="bottomPanel__clearButton">Удалить выполненное</button>
-  ) : null;
 
   return (
     <div className="bottomPanel">
@@ -21,7 +23,14 @@ function BottomPanel({
           DECLENSION_CASES
         )}`}
       </span>
-      {clearButton}
+      {isClearButton ? (
+        <button
+          className="bottomPanel__clearButton"
+          onClick={() => dispatch(clearCompletedItems())}
+        >
+          Удалить выполненное
+        </button>
+      ) : null}
     </div>
   );
 }

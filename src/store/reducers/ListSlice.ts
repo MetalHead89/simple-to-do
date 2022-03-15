@@ -34,11 +34,14 @@ export const ListSlice = createSlice({
     },
     deleteItem(state, action: PayloadAction<number>) {
       state.list.forEach((item, index) => {
-        if(item.id === action.payload) {
+        if (item.id === action.payload) {
           state.list.splice(index, 1);
         }
-      })
-    }
+      });
+    },
+    clearCompletedItems(state) {
+      state.list = state.list.filter((item) => item.isComplete === false);
+    },
   },
 });
 
