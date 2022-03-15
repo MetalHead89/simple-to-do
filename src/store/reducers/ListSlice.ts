@@ -21,9 +21,11 @@ export const ListSlice = createSlice({
   initialState,
   reducers: {
     addItem(state, action: PayloadAction<string>) {
-      id += 1;
+      if (action.payload.trim().length > 0) {
+        id += 1;
 
-      state.list.push({ id, text: action.payload, isComplete: false });
+        state.list.push({ id, text: action.payload, isComplete: false });
+      }
     },
     changeItemState(state, action: PayloadAction<number>) {
       state.list.forEach((item, index) => {
