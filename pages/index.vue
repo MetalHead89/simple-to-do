@@ -1,3 +1,11 @@
 <template>
-  <h1>Page</h1>
+  <div class="to-do-app">
+    <UiAddListButton />
+  </div>
 </template>
+
+<style lang="scss" scoped>
+.to-do-app {
+  padding: 20px;
+}
+</style>
