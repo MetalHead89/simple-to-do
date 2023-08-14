@@ -8,7 +8,7 @@
   </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
   import { useListsStore } from '@/stores/lists'
 
   const listsStore = useListsStore()
@@ -20,6 +20,9 @@
 
 <style lang="scss" scoped>
 .add-list {
+  position: absolute;
+  top: 20px;
+  left: 20px;
   background-color: transparent;
   border: 2px solid $primary;
   border-radius: 15px;
