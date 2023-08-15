@@ -11,7 +11,7 @@
       v-else
       class="empty"
     >
-      Не создано ни одного списка дел
+      {{ $t('components.ui.no_lists') }}
     </div>
   </div>
 </template>
