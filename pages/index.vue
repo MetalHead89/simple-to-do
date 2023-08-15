@@ -1,6 +1,7 @@
 <template>
   <div class="to-do-app">
     <UiAddListButton />
+    <UiLangSwitcher />
     <UiToDos />
   </div>
 </template>

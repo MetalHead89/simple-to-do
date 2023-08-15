@@ -35,7 +35,7 @@
   margin: 0;
   padding: 0px;
   outline: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  transition: all $default-transition;
   user-select: none;
 }
 
