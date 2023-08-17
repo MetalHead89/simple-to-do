@@ -19,6 +19,9 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n({ useScope: 'global' })
 const DEFAULT_LANG = 'ru'
 const languages = [
   { key: 'ru', name: 'Ru' },
@@ -29,6 +32,7 @@ const currentLang = ref(DEFAULT_LANG)
 
 const handleRadioInput = ({ target }: Event) => {
   currentLang.value = (target as HTMLInputElement).value
+  locale.value = currentLang.value
 }
 </script>
 
