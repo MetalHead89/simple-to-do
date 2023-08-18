@@ -21,5 +21,6 @@
   ],
   "i18n-ally.review.enabled": false,
   "i18n-ally.review.gutters": false,
-  "i18n-ally.theme.annotation": "rgba(238, 123, 9, 0.8)"
+  "i18n-ally.theme.annotation": "rgba(238, 123, 9, 0.8)",
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

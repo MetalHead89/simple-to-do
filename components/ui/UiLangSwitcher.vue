@@ -1,7 +1,7 @@
 <template>
   <div class="lang-switcher">
     <label
-      v-for="({ key, name }) in languages"
+      v-for="({ key, name }) in LANGUAGES"
       :key="key"
       :class="['lang-item', currentLang === key && 'checked']"
     >
@@ -22,17 +22,28 @@
 import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n({ useScope: 'global' })
+const { $constants } = useNuxtApp()
+
 const DEFAULT_LANG = 'ru'
-const languages = [
+const LANGUAGES = [
   { key: 'ru', name: 'Ru' },
   { key: 'en', name: 'En' }
 ]
 
 const currentLang = ref(DEFAULT_LANG)
 
+onMounted(() => {
+  setLocale(localStorage.getItem($constants.LOCALE_LS_KEY) ||  DEFAULT_LANG)
+})
+
 const handleRadioInput = ({ target }: Event) => {
-  currentLang.value = (target as HTMLInputElement).value
-  locale.value = currentLang.value
+  setLocale((target as HTMLInputElement).value)
+}
+
+const setLocale = (lang: string) => {
+  currentLang.value = lang
+  localStorage.setItem($constants.LOCALE_LS_KEY, lang)
+  locale.value = lang
 }
 </script>
 
