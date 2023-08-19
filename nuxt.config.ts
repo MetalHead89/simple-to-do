@@ -8,9 +8,14 @@ export default defineNuxtConfig({
   ],
 
   modules: [
+    '@nuxtjs/i18n',
     'nuxt-vitest',
     '@pinia/nuxt'
   ],
+
+  i18n: {
+    vueI18n: './i18n.config.ts'
+  },
 
   css: ['@/assets/styles/main.scss'],
 

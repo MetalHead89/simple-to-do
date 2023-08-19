@@ -3,6 +3,7 @@ import path from 'path'
 
 export default defineVitestConfig({
   test: {
+    setupFiles: ['tests/unit.setup.ts'],
     environment: 'nuxt',
     environmentOptions: {
       nuxt: {

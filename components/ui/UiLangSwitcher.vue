@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
-const { locale } = useI18n({ useScope: 'global' })
+const { setLocale } = useI18n()
 const { $constants } = useNuxtApp()
 
 const DEFAULT_LANG = 'ru'
@@ -33,17 +33,17 @@ const LANGUAGES = [
 const currentLang = ref(DEFAULT_LANG)
 
 onMounted(() => {
-  setLocale(localStorage.getItem($constants.LOCALE_LS_KEY) ||  DEFAULT_LANG)
+  setSelectedLocale(localStorage.getItem($constants.LOCALE_LS_KEY) ||  DEFAULT_LANG)
 })
 
 const handleRadioInput = ({ target }: Event) => {
-  setLocale((target as HTMLInputElement).value)
+  setSelectedLocale((target as HTMLInputElement).value)
 }
 
-const setLocale = (lang: string) => {
+const setSelectedLocale = (lang: string) => {
   currentLang.value = lang
   localStorage.setItem($constants.LOCALE_LS_KEY, lang)
-  locale.value = lang
+  setLocale(lang)
 }
 </script>
 
