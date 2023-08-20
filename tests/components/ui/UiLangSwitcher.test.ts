@@ -1,8 +1,9 @@
-import { describe, test, expect,vi } from 'vitest'
+import { describe, test, expect } from 'vitest'
 import { mountSuspended } from 'nuxt-vitest/utils'
-import { useI18n } from 'vue-i18n'
 
 import index from '@/pages/index.vue'
+
+const { $constants } = useNuxtApp()
 
 describe('Lang switcher', () => {
   test('Lang switcher is exist', async () => {
@@ -12,25 +13,15 @@ describe('Lang switcher', () => {
     expect(langSwitcher.exists()).toBe(true)
   })
 
-  test('langSwitcher must run the setLocale method with the desired parameters', async () => {
-    const setItem = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {})
+  test('Switching langSwitcher should change the value in localStorage', async () => {
     const page = await mountSuspended(index)
-    const ruRadioButton = await page.find('[value="ru"]')
-    const enRadioButton = await page.find('[value="en"]')
+    const ruRadioButton = page.find('[value="ru"]')
+    const enRadioButton = page.find('[value="en"]')
 
-    // await nextTick()
-    // await nextTick()
-    // await nextTick()
+    enRadioButton.setValue(true)
+    expect(localStorage.getItem($constants.LOCALE_LS_KEY)).toBe('en')
 
-    await enRadioButton.setValue(true)
-    // await enRadioButton.trigger('click')
-    await nextTick()
-    await nextTick()
-    await nextTick()
-    // console.dir(setItem)
-
-    // console.dir(localStorage.getItem('to-do_locale'))
-
-    expect(setItem).toBeCalledWith('ru')
+    ruRadioButton.setValue(true)
+    expect(localStorage.getItem($constants.LOCALE_LS_KEY)).toBe('ru')
   })
 })
