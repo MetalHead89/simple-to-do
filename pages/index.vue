@@ -3,6 +3,7 @@
     <UiAddListButton />
     <UiLangSwitcher />
     <UiToDos />
+    <UiListPage />
   </div>
 </template>
 
