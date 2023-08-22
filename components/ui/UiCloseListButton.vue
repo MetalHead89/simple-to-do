@@ -1,9 +1,9 @@
 <template>
   <UiButton
-    class="add-list"
-    @click="handleAddListClick"
+    class="close-list"
+    @click="handleCloseListClick"
   >
-    +
+    x
   </UiButton>
 </template>
 
@@ -12,13 +12,13 @@
 
   const listsStore = useListsStore()
 
-  const handleAddListClick = () => {
-    listsStore.addNewList()
+  const handleCloseListClick = () => {
+    listsStore.hideListPage()
   }
 </script>
 
 <style lang="scss" scoped>
-.add-list {
+.close-list {
   position: absolute;
   top: 20px;
   left: 20px;

@@ -3,7 +3,9 @@
     <div
       v-if="listsStore.isShowListPage"
       class="list-page"
-    />
+    >
+      <UiCloseListButton />
+    </div>
 </Transition>
 </template>
 
@@ -23,7 +25,8 @@
     transition: left .4s ease-in;
     box-shadow: 0 8px 32px 0 $shadow-color;
 
-    &.v-enter-from {
+    &.v-enter-from,
+    &.v-leave-from{
       left: -100%;
     }
 
