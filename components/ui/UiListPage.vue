@@ -22,15 +22,20 @@
     width: 100%;
     height: 100vh;
     background: $white;
-    transition: left .4s ease-in;
     box-shadow: 0 8px 32px 0 $shadow-color;
 
     &.v-enter-from,
-    &.v-leave-from{
+    &.v-leave-to {
       left: -100%;
     }
 
-    &.v-enter-to {
+    &.v-enter-active,
+    &.v-leave-active {
+      transition: left .4s ease-in;
+    }
+
+    &.v-enter-to,
+    &.v-leave-from {
       left: 0;
     }
   }
