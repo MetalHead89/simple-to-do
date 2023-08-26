@@ -4,7 +4,7 @@
       class="close-list"
       @click="handleCloseListClick"
     >
-      x
+      <i class="ic-close" />
     </UiButton>
   </Transition>
 </template>
@@ -24,6 +24,8 @@
   position: absolute;
   top: 20px;
   left: 20px;
+  font-size: 25px;
+  line-height: 0;
 
   &.v-enter-from {
     transform: scale(0);

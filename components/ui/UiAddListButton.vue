@@ -3,7 +3,7 @@
     class="add-list"
     @click="handleAddListClick"
   >
-    +
+    <i class="ic-add-list" />
   </UiButton>
 </template>
 
@@ -22,5 +22,7 @@
   position: absolute;
   top: 20px;
   left: 20px;
+  font-size: 25px;
+  line-height: 0;
 }
 </style>
