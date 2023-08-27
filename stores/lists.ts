@@ -5,8 +5,9 @@ export const useListsStore = defineStore('lists', () => {
   const isShowListPage = ref(false)
 
   const addNewList = () => {
-    lists.value.push({})
-    showListPage()
+    lists.value.push({
+      title: 'Пустой список'
+    })
   }
 
   const hideListPage = () => {

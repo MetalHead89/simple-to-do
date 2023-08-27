@@ -1,14 +1,15 @@
 <template>
   <div class="to-do-lists">
-    <div
-      v-if="lists.length > 0"
-      class="lists"
-    >
-      Список
+    <div class="lists">
+      <UiListPreview
+        v-for="(list, index) in lists"
+        :key="index"
+        v-bind="list"
+      />
     </div>
 
     <div
-      v-else
+      v-if="lists.length === 0"
       class="empty"
     >
       {{ $t('components.ui.no_lists') }}
