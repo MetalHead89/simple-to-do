@@ -22,3 +22,11 @@ import { useListsStore } from '@/stores/lists'
 
 const { lists } = useListsStore()
 </script>
+
+<style lang="scss" scoped>
+.lists{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+</style>
