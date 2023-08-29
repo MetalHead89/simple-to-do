@@ -1,5 +1,5 @@
 <template>
-  <div class="to-do-lists">
+  <div class="to-dos">
     <div class="lists">
       <UiListPreview
         v-for="(list, index) in lists"
@@ -24,9 +24,11 @@ const { lists } = useListsStore()
 </script>
 
 <style lang="scss" scoped>
-.lists{
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+.to-dos {
+  .lists{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
 }
 </style>

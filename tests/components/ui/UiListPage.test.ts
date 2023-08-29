@@ -30,15 +30,22 @@ describe('List page', async () => {
     expect(listPage.exists()).toBe(false)
   })
 
-  // test('List page is show', async () => {
-  //   const button = page.find('.add-list')
+  test('List page is show', async () => {
+    const button = page.find('.add-list')
 
-  //   button.trigger('click')
-  //   await nextTick()
-  //   const listPage = page.find('.list-page')
+    let listPage = page.find('.list-page')
+    expect(listPage.exists()).toBe(false)
 
-  //   expect(listPage.exists()).toBe(true)
-  // }),
+    button.trigger('click')
+    await nextTick()
+
+    const listPreview = page.find('.list')
+    listPreview.trigger('click')
+    await nextTick()
+
+    listPage = page.find('.list-page')
+    expect(listPage.exists()).toBe(true)
+  })
 
   // test('List page opens and closes', async () => {
   //   const showPageButton = page.find('.add-list')
