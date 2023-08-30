@@ -1,17 +1,28 @@
 <template>
-  <div class="list">
+  <div
+    class="list-preview"
+    @click="handlePreviewClick"
+  >
     {{ props.title }}
   </div>
 </template>
 
 <script setup  lang="ts">
+import { useListsStore } from '@/stores/lists'
+
+const { showListPage } = useListsStore()
+
   const props = defineProps<{
     title?: string
   }>()
+
+  const handlePreviewClick = () => {
+    showListPage()
+  }
 </script>
 
 <style lang="scss" scoped>
-.list {
+.list-preview {
   background-color: transparent;
   border: 2px solid $primary;
   border-radius: 15px;
