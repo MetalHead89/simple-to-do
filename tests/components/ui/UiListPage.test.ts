@@ -39,7 +39,7 @@ describe('List page', async () => {
     button.trigger('click')
     await nextTick()
 
-    const listPreview = page.find('.list')
+    const listPreview = page.find('.list-preview')
     listPreview.trigger('click')
     await nextTick()
 
