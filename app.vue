@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
-    <NuxtPage />
+  <div>
+    Simple TODO
   </div>
 </template>
