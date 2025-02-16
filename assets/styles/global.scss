@@ -1,0 +1,16 @@
+@use './icons_font.scss' as *;
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  overflow-y: auto;
+  font-size: $base-font-size;
+  scroll-behavior: smooth;
+  font-family: $primary-font;
+  color: $font-color;
+  background: $main-bg;
+  -webkit-tap-highlight-color: transparent;
+}
