@@ -1,6 +1,10 @@
 <template>
   <NuxtLayout>
     <NuxtPage />
+
+    <ClientOnly>
+      <NuxtSnackbar />
+    </ClientOnly>
   </NuxtLayout>
 </template>
 

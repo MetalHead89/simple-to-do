@@ -5,6 +5,8 @@
         <UiButtonOnlyContent @click="handleNewTodoButtonClick">
           <i class="header-action-icon ic-plus"></i>
         </UiButtonOnlyContent>
+
+        <FeaturesAuth />
       </div>
     </UiHeader>
 
@@ -29,7 +31,7 @@ const handleNewTodoButtonClick = () => {
 .todos {
   .header-content {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 
     .header-action-icon {
       color: $font-color;

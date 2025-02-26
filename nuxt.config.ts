@@ -6,11 +6,26 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    'nuxt-snackbar',
+    'nuxt-mongoose'
   ],
 
+  mongoose: {
+    uri: process.env.MONGODB_URI,
+    options: { dbName: process.env.MONGODB_DB_NAME },
+    modelsDir: 'models',
+    devtools: true
+  },
+
+  snackbar: {
+    bottom: true,
+    duration: 5000
+  },
+
   css: [
-    '@/assets/styles/global.scss'
+    '@/assets/styles/global.scss',
+    'vue-final-modal/style.css'
   ],
 
   vite: {
@@ -22,6 +37,11 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+
+  runtimeConfig: {
+    accessTokenSalt: process.env.ACCESS_TOKEN_SALT,
+    refreshTokenSalt: process.env.REFRESH_TOKEN_SALT
   },
 
   app: {

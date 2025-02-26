@@ -3,7 +3,7 @@
     <input
       v-bind="$attrs"
       :value="model"
-      type="text"
+      :type="type"
       class="input"
       @input="handleTextInput"
       @focus="isFocused = true"
@@ -15,6 +15,14 @@
 </template>
 
 <script setup lang="ts">
+type TProps = {
+  type?: string
+}
+
+withDefaults(defineProps<TProps>(), {
+  type: 'text'
+})
+
 const model = defineModel<string>()
 const isFocused = ref(false)
 

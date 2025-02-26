@@ -1,21 +1,21 @@
 import { it, expect, describe, vi } from 'vitest'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
-import UiButtonFilled from '@/components/ui/button/Filled.vue'
+import ButtonOnlyContent from '@/components/ui/button/OnlyContent.vue'
 
-describe ('UiButtonFilled', () => {
+describe ('OnlyContent', () => {
   it('Should render', async () => {
-    const wrapper = await mountSuspended(UiButtonFilled)
-    expect(wrapper.classes()).toContain('button-filled')
+    const wrapper = await mountSuspended(ButtonOnlyContent)
+    expect(wrapper.classes()).toContain('button-only-content')
   })
 
   it ('Should be of type button by default', async () => {
-    const wrapper = await mountSuspended(UiButtonFilled)
+    const wrapper = await mountSuspended(ButtonOnlyContent)
     expect(wrapper.attributes().type).toBe('button')
   })
 
   it('Should emit click event', async () => {
     const handleClick = vi.fn()
-    const wrapper = await mountSuspended(UiButtonFilled, {
+    const wrapper = await mountSuspended(ButtonOnlyContent, {
       attrs: {
         onClick: handleClick
       }
@@ -27,7 +27,7 @@ describe ('UiButtonFilled', () => {
 
   it('Should not emit click event', async () => {
     const handleClick = vi.fn()
-    const wrapper = await mountSuspended(UiButtonFilled, {
+    const wrapper = await mountSuspended(ButtonOnlyContent, {
       props: {
         disabled: true
       },
@@ -42,7 +42,7 @@ describe ('UiButtonFilled', () => {
 
   it('Should display text in default slot', async () => {
     const SLOT_TEXT = 'Test text'
-    const wrapper = await mountSuspended(UiButtonFilled, {
+    const wrapper = await mountSuspended(ButtonOnlyContent, {
       slots: {
         default: SLOT_TEXT
       }

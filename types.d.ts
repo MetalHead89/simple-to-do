@@ -9,3 +9,14 @@ export type TTodo = {
   name: string,
   items: TTodoItem[]
 }
+
+export type TResponseError = {
+  data?: {
+    errors?: Record<string, string[]>
+  },
+  message: string,
+  stack: string,
+  statusCode: number,
+  statusMessage: string,
+  url: string
+}
